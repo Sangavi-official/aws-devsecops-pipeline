@@ -1,0 +1,3 @@
+# Do not count generated scanner output in language statistics
+evidence/** linguist-vendored
+docs/** linguist-documentation
