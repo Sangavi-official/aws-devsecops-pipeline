@@ -60,3 +60,11 @@ resource "aws_lambda_permission" "apigw" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.api.execution_arn}/*/*"
 }
+
+# Root route serves the HTML demo page (same Lambda decides by path).
+resource "aws_apigatewayv2_route" "root" {
+  # checkov:skip=CKV_AWS_309:Public demo page by design - static HTML presentation, read-only, stage throttled to 5 req/s.
+  api_id    = aws_apigatewayv2_api.api.id
+  route_key = "GET /"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
+}
