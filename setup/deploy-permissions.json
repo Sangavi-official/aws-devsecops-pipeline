@@ -38,6 +38,21 @@
       "Resource": "arn:aws:logs:ap-south-1:634670495126:log-group:*"
     },
     {
+      "Sid": "ApiGatewayVendedLogDelivery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:UpdateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "IamScopedToTfRoles",
       "Effect": "Allow",
       "Action": [
