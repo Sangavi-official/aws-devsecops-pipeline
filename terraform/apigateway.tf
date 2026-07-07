@@ -19,6 +19,7 @@ resource "aws_apigatewayv2_integration" "lambda" {
 }
 
 resource "aws_apigatewayv2_route" "visits" {
+ # checkov:skip=CKV_AWS_309:Public demo endpoint by design - returns a visit count, no sensitive data, no state-changing operations, and the stage throttles to 5 req/s. Auth (IAM/JWT) would block the public demo purpose.
   api_id    = aws_apigatewayv2_api.api.id
   route_key = "GET /visits"
   target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
