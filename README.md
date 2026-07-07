@@ -2,7 +2,9 @@
 
 Hi, I am Sangavi. 
 
-**Live demo:** https://cemrr3gc81.execute-api.ap-south-1.amazonaws.com/visits (open it, the counter goes up)
+**Live demo page:** https://cemrr3gc81.execute-api.ap-south-1.amazonaws.com/ (a designed page that shows the live visit counter and explains the request flow)
+
+**Raw API:** https://cemrr3gc81.execute-api.ap-south-1.amazonaws.com/visits (the JSON endpoint the page calls - each hit increments the counter in DynamoDB)
 
 ## What is this project about
 
@@ -45,3 +47,4 @@ Total AWS bill: 0 rupees. The whole project runs inside the free tier, forever.
 This is the daily work of DevSecOps and cloud security engineers: IaC scanning, secret scanning, OIDC, CIS compliance, least privilege IAM. I now have a running example of each one that I built and debugged myself.
 
 Full step-by-step story, screenshots and references are in [docs/PROJECT_REPORT.md](docs/PROJECT_REPORT.md).
+
