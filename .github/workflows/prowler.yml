@@ -50,7 +50,7 @@ jobs:
               fh.seek(0)
               delim = ";" if sample.count(";") > sample.count(",") else ","
               rows = list(csv.DictReader(fh, delimiter=delim))
-          status_col = next(c for c in rows[0] if c.upper().endswith("STATUS"))
+          status_col = "STATUS"
           passed = sum(1 for r in rows if r[status_col].strip().upper() == "PASS")
           failed = sum(1 for r in rows if r[status_col].strip().upper() == "FAIL")
           total = passed + failed
